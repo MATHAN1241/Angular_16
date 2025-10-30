@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { Search } from './search/search';
 import { CommonModule } from '@angular/common';
+import { ProductList } from './product-list/product-list';
 
 @Component({
-  selector: 'product-list',
-  imports: [Search,CommonModule],
-  templateUrl: './product-list.html',
-  styleUrl: './product-list.css',
+  selector: 'container',
+  imports: [Search,CommonModule,ProductList],
+  templateUrl: './container.html',
+  styleUrl: './container.css',
 })
-export class ProductList {
+export class Container {
 
   listofString: string[]= ["mathan", "kavi","hello","hoew"];
   // name="Mathan";
