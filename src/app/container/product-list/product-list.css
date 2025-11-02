@@ -69,6 +69,7 @@
 }
 
 .ekart--product--category,
+.ekart--prodct--in-stock,
 .ekart--product--available-colors {
     font-size: 12px;
     color: #999;
