@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Product } from './product/product';
+import { Filter } from './filter/filter';
 
 @Component({
   selector: 'product-list',
-  imports: [CommonModule,],
+  imports: [CommonModule,Product,Filter],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
@@ -352,5 +354,8 @@ export class ProductList {
     "slug": "nike-cortez"
   }
  
- ]
+ ];
+   totalProductCount=this.products.length;
+   totalInStockCount= this.products.filter(p=> p.is_in_inventory===true).length;
+   totalOutStockCount= this.products.filter(p=>p.is_in_inventory===false).length;
 }
