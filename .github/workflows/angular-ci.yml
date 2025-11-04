@@ -3,8 +3,9 @@ name: Angular CI/CD
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
+permissions:
+  contents: write   # ✅ Allow pushing to gh-pages
 
 jobs:
   build-deploy:
@@ -13,6 +14,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false   # ✅ Important!
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -31,5 +34,5 @@ jobs:
       - name: Deploy to GitHub Pages 🌐
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages         # Deploy branch
-          folder: dist/simpleapplication   # Replace with your actual build folder name
+          branch: gh-pages
+          folder: dist/simpleapplication   # ✅ <-- Replace with your actual dist folder name
