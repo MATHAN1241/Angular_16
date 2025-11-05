@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from './product/product';
 import { Filter } from './filter/filter';
 
@@ -12,7 +12,7 @@ import { Filter } from './filter/filter';
 export class ProductList {
   index:number=0;
  products=[
-  
+
   {
     "id": 2,
     "name": "Nike Air Max 270",
@@ -353,9 +353,21 @@ export class ProductList {
     "imageURL": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500",
     "slug": "nike-cortez"
   }
- 
+  
  ];
+
    totalProductCount=this.products.length;
    totalInStockCount= this.products.filter(p=> p.is_in_inventory===true).length;
    totalOutStockCount= this.products.filter(p=>p.is_in_inventory===false).length;
+
+   selectFilterRadio: string='all';
+
+   onFilterChanged(value:string){
+     console.log(value);
+     this.selectFilterRadio= value;
+   }
+
+   @Input()
+   searchText: string='';
+
 }
