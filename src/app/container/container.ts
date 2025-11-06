@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Search } from './search/search';
 import { CommonModule } from '@angular/common';
 import { ProductList } from './product-list/product-list';
+import { ProductDetail } from './product-detail/product-detail';
 
 @Component({
   selector: 'container',
-  imports: [Search,CommonModule,ProductList],
+  imports: [Search,CommonModule,ProductList,ProductDetail],
   templateUrl: './container.html',
   styleUrl: './container.css',
 })

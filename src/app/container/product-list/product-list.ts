@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Product } from './product/product';
 import { Filter } from './filter/filter';
+import { Products } from '../../Models/Products';
 
 @Component({
   selector: 'product-list',
@@ -11,6 +12,9 @@ import { Filter } from './filter/filter';
 })
 export class ProductList {
   index:number=0;
+
+  selectedProduct : Products;
+
  products=[
 
   {
