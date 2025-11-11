@@ -12,27 +12,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install Dependencies
-        run: npm install
+      - run: npm install
+      - run: npm install -g @angular/cli
 
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
+      - run: ng build --configuration production --base-href "/simpleapplication/"
 
-      - name: Build Angular Project
-        run: ng build --configuration production --base-href "/simpleapplication/"
-
-      - name: Deploy to GitHub Pages 🌐
-        uses: JamesIves/github-pages-deploy-action@v4
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/simpleapplication
+          folder: dist/simpleapplication/browser   # ✅ FIXED
