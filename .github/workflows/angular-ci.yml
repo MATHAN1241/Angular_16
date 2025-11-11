@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: write   # ✅ Allow pushing to gh-pages
+  contents: write
 
 jobs:
   build-deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false   # ✅ Important!
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -29,12 +29,10 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Build Angular Project
-        run: ng build --configuration production --base-href "/Angular_16_Course/"
+        run: ng build --configuration production --base-href "/simpleapplication/"
 
       - name: Deploy to GitHub Pages 🌐
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/Angular_16_Course
-
-       #   folder: dist/simpleapplication   # ✅ <-- Replace with your actual dist folder name
+          folder: dist/simpleapplication
