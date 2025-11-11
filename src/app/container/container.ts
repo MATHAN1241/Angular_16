@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Search } from './search/search';
 import { CommonModule } from '@angular/common';
 import { ProductList } from './product-list/product-list';
@@ -13,6 +13,9 @@ import { ProductDetail } from './product-detail/product-detail';
 export class Container {
 
   listofString: string[]= ["mathan", "kavi","hello","hoew"];
+  
+  @ViewChild(ProductList)
+  productListComponent : ProductList;
   // name="Mathan";
   // addTocart:number=1;
   // product={

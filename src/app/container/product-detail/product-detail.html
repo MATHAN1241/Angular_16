@@ -3,17 +3,17 @@
         <i class="fa fa-times" aria-hidden="true"></i>
     </div>
     <div class="ekart-product-detail-image">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" class="ekart-product-detail-image">
+        <img [src]="product.imageURL" class="ekart-product-detail-image">
     </div>
 
     <div class="ekart-product-detail">
         <div class="ekart-product-detail-name">
-            <h2>Michel Feburary SK8-HI</h2>
+            <h2>{{product.name}}</h2>
         </div>
         <div class="ekart-product-detail-gbc">
-            <span>MEN</span>
-            <span>NIKE</span>
-            <span>SPORTS</span>
+            <span>{{product.gender}}</span>
+            <span>{{product.brand}}</span>
+            <span>{{product.category}}</span>
         </div>
         <div class="ekart-product-detail-price">
             <p>
@@ -25,14 +25,28 @@
 
         <div class="ekart-product-detail-size">
             <div style="padding: 5px 0px; border-bottom: #ccc 2px solid;">
-                <h4>Avaialble SIze</h4>
+                <h4>Avaialble Size</h4>
             </div>
-            <div style="margin-top: 20px;">
+            <div style="margin-top: 20px;" >
+            
+                <span class="ekart-product-detail-available-size" *ngFor="let prod of product.size">{{prod}}</span>
+                
+                <!-- <span class="ekart-product-detail-available-size">7</span>
+                <span class="ekart-product-detail-available-size">8</span>
+                <span class="ekart-product-detail-available-size">9</span> -->
+            </div>
+
+        </div>
+         <div class="ekart-product-detail-size">
+            <div style="padding: 5px 0px; border-bottom: #ccc 2px solid;">
+                <h4>Avaialble color</h4>
+            </div>
+            <!-- <div style="margin-top: 20px;">
                 <span class="ekart-product-detail-available-size">6</span>
                 <span class="ekart-product-detail-available-size">7</span>
                 <span class="ekart-product-detail-available-size">8</span>
                 <span class="ekart-product-detail-available-size">9</span>
-            </div>
+            </div> -->
 
         </div>
         <div class="ekart-product-detail-desc">
@@ -40,7 +54,7 @@
                 <h4>Product Description</h4>
             </div>
             <div style="margin-top: 20px;">
-                <p>DESCRIPTION</p>
+                <p>{{product.description}}</p>
             </div>
 
         </div>
