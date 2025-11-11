@@ -35,4 +35,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/simpleapplication   # ✅ <-- Replace with your actual dist folder name
+          folder: dist/Angular_16_Course
+
+       #   folder: dist/simpleapplication   # ✅ <-- Replace with your actual dist folder name
