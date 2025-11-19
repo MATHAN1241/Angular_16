@@ -7,3 +7,31 @@ button{
     margin: 0px 5px;
     color: red;
 }
+.ekart-feature-products{
+    background-color: #28282B;
+    padding: 20px 10px;
+    display: flex;
+}
+
+.ekart-feature-products-heading{
+    width:320px;
+    margin:10px 10px;
+    padding: 20px 30px;
+    color:#fff;
+}
+
+.ekart-featured-product-item{
+width: 270px;
+margin: 10px 10px;
+padding: 20px 30px;
+background-color: #fff;
+}
+.title, .description, call-to-action {
+margin: 10px 0px;
+}
+.call-to-action{
+background-color: #28282B;
+color: #fff;
+width: 100%;
+padding: 10px 0px;
+}

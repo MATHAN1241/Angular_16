@@ -1,31 +1,49 @@
-
 <div class="ekart-product-container">
 
-<!-- <img src={{product.pImage}}  alt="hello"> -->
-<!-- <img [src]="product.pImage" alt="hello"> -->
+   <!-- <img src={{product.pImage}}  alt="hello"> -->
+   <!-- <img [src]="product.pImage" alt="hello"> -->
 
-<!-- <p>Name : {{product.name}} </p>
+   <!-- <p>Name : {{product.name}} </p>
 <p>Price: {{'$' + product.price}}</p>
 <p>Color: {{product.color}}</p>
 <p>Discount Price: {{ getDiscountPrice().toFixed(2) }}</p>
 <p>{{product.inStock > 0 ?'Only ' + product.inStock + ' items left' : 'Not in Stock' }}</p> -->
-<!-- <button [disabled]="!(product.inStock > 0)">Buy Now</button> -->
- <!-- <button bind-disabled="!(product.inStock > 0)">Buy Now</button> -->
-<!-- <br/>
+   <!-- <button [disabled]="!(product.inStock > 0)">Buy Now</button> -->
+   <!-- <button bind-disabled="!(product.inStock > 0)">Buy Now</button> -->
+   <!-- <br/>
 <button (click)="DecrementCartValue()">-</button>
 <span>{{addTocart}}</span>
 <button (click)="IncremantCartValue()">+</button> -->
-<!-- <input bind-value="name"> -->
-<!-- <input [value]="name"  (input)="onNameChange($event)">
+   <!-- <input bind-value="name"> -->
+   <!-- <input [value]="name"  (input)="onNameChange($event)">
 <br/>
 <p>Name : {{name}}</p> -->
-<!--Disabled, Hidden, Checks Not String Interpolation only property Binding -->
+   <!--Disabled, Hidden, Checks Not String Interpolation only property Binding -->
 
 
-<app-search (searchTextChanged)="setSearchText($event)"></app-search>
-<product-list [searchText]="searchText" #productListComponent></product-list>
-<product-detail *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></product-detail>
-<!-- <div *ngFor="let item of listofString">
+   <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+   <product-list [searchText]="searchText" #productListComponent></product-list>
+   <product-detail *ngIf="productListComponent.selectedProduct"
+      [productListComp]="productListComponent"></product-detail>
+   <div class="ekart-feature-products">
+      <div class="ekart-feature-products-heading">
+         <h1>ANGULAR LEARN</h1>
+      </div>
+      <featured-brands>
+          <h3 class="title">New Arrivals in Nike</h3>
+         <button class="call-to-action">Show New Arrivals in Nike</button>
+      </featured-brands>
+      <featured-brands>
+         <h3 class="title">New Arrivals in Adidas</h3>
+         <button class="call-to-action">Show New Arrivals in Adidas</button>
+      </featured-brands>
+      <featured-brands>
+         <h3 class="title">New Arrivals in Reebok</h3>
+         <button class="call-to-action">Show New Arrivals in Reebok</button>
+      </featured-brands>
+   </div>
+
+   <!-- <div *ngFor="let item of listofString">
    <p>Current element of array is: {{item}}</p>
 </div> -->
 </div>
